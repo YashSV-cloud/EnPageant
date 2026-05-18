@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chess Platform</title>
+
+  <!-- Chessboard CSS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <!-- LEFT PANEL -->
+  <aside class="sidebar">
+
+    <div class="card">
+      <h2>AI Chess</h2>
+
+      <button id="newGameBtn">New Game</button>
+      <button id="undoBtn">Undo Move</button>
+
+      <select id="difficulty">
+        <option value="5">Intermediate</option>
+        <option value="12">Advanced</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Evaluation</h3>
+      <div class="evaluation-bar">
+        <div id="evalFill"></div>
+      </div>
+      <div id="evalText">0.0</div>
+    </div>
+
+    <div class="card">
+      <h3>Move History</h3>
+      <div id="moveHistory"></div>
+    </div>
+
+  </aside>
+
+  <!-- CENTER -->
+  <main class="board-container">
+
+    <div id="board"></div>
+
+    <div class="status-panel">
+      <span id="gameStatus">White to move</span>
+    </div>
+
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="analysis-panel">
+
+    <div class="card">
+      <h3>Move Analysis</h3>
+      <div id="analysisOutput"></div>
+    </div>
+
+    <div class="card">
+      <h3>Learning Assistant</h3>
+      <div id="learningOutput"></div>
+    </div>
+
+    <div class="card">
+      <h3>Opening</h3>
+      <div id="openingName">Unknown</div>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- Chess.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.13.4/chess.min.js"></script>
+
+<!-- Chessboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard.min.js"></script>
+
+<!-- Scripts -->
+<script src="./assets/js/engine.js"></script>
+<script src="./assets/js/analysis.js"></script>
+<script src="./assets/js/learning.js"></script>
+<script src="./assets/js/ui.js"></script>
+<script src="./assets/js/board.js"></script>
+<script src="./assets/js/app.js"></script>
+
+</body>
+</html>
